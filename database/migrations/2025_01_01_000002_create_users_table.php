@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\users;
 
 return new class extends Migration
 {
@@ -23,9 +24,6 @@ return new class extends Migration
             $table->unsignedBigInteger('user_status_id');
             $table->timestamps();
 
-            // Foreign key constraints
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
-            $table->foreign('user_status_id')->references('id')->on('user_statuses')->onDelete('cascade');
         });
     }
 
